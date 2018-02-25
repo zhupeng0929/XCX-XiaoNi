@@ -1,0 +1,18 @@
+<template name="schemeTemplate">
+<view class='scheme-container'>
+  <image class='schemeimg' mode='aspectFit' src='{{FacePictureFilePath}}'></image>
+  <text class='schemetitle'>{{SchemeTitle}}</text>
+  <text class='schemecontent'>{{SchemeSubTitle}}</text>
+  <view style='border-bottom: 1px solid #ededed;margin:24rpx 0 10rpx 0;'></view>
+  <view class='schemetag'>
+  <view>
+    <image class='schemecategoryimg' src='/images/falist3x.png'></image>
+    <text class='schemecontent'>{{CategoryName}}</text>
+    </view>
+    <view>
+    <image class='schemecategoryimg' src='/images/liulan2x.png'></image>
+    <text class='schemecontent'>{{ShareCount}}</text>
+    </view>
+  </view>
+</view>
+</template>

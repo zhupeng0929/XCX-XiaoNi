@@ -1,0 +1,14 @@
+<import src="../../template/goods_template.wxml" />
+
+<view class='titleTab'>
+  <text>综合</text>
+  <text>销量</text>
+  <text>价格</text>
+</view>
+<view  class='goodslist'>
+  <block wx:for="{{goodsList}}">
+   
+      <template is="goodsTemplate" data="{{...item}}" />
+   
+  </block>
+</view>

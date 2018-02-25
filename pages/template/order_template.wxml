@@ -1,0 +1,29 @@
+<template name="orderTemplate">
+  <view class='orderinfo'>
+  <view class='ordergoodslist'>
+    <block wx:for="{{mGoodsList}}" wx:for-item="item">
+      <view class='order-goods'>
+        <image src='{{item.PictureImg}}' class='order-img'></image>
+        <view class='ordergoodsinfo'>
+          <view>
+            <text class='order-goodsname'>{{item.GoodsName}} </text>
+          </view>
+          <view class='goodsinfo'>
+            <text class='gongyi'>{{item.StrGoodsSkuName}}</text>
+            <text class='goodsprice'>￥{{item.GoodsPrice}}</text>
+          </view>
+          <view class='view-goodscount'>
+            <text class='goodscount'>X{{item.Quantity}}</text>
+          </view>
+
+        </view>
+      </view>
+    </block>
+    </view>
+    <view class='view-money'>
+      <text class='text_0'>¥</text>
+      <text class='text_price'>{{MoneyPayable}}</text>
+
+    </view>
+  </view>
+</template>

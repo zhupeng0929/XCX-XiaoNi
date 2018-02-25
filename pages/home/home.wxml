@@ -1,0 +1,12 @@
+<!--pages/home/home.wxml-->
+<import src="../template/shop_template.wxml" />
+<import src="../template/scheme_template.wxml" />
+<import src="../template/find_template.wxml" />
+
+<block wx:for="{{findhotinfo}}" wx:for-item="item">
+  <navigator url='/pages/find/find?findid={{item.FindID}}'>
+    <view style='margin:8px'>
+      <template is="findTemplate" data="{{...item}}" />
+    </view>
+  </navigator>
+</block>

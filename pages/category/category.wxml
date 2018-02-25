@@ -1,0 +1,54 @@
+<!--左侧栏-->
+<scroll-view scroll-y style="height: 100%;">
+  <view class="categorycontainer nav_left">
+    <block wx:for="{{navLeftItems}}" >
+      <view class="nav_left_items nav_left_One" style='color:'>{{item.CategoryTitle}}</view>
+      <block wx:for="{{item.DataList}}" wx:for-item="itemTwo" wx:for-index="itemIndex">
+        <view class="nav_left_items {{curNav == itemTwo.CategoryID ? 'active' : ''}}" bindtap="switchRightTab" data-itemIndex="{{itemIndex}}" data-id="{{itemTwo.CategoryID}}" data-pid="{{item.CategoryID}}" data-index='{{index}}' data-itemid="CategoryID{{itemTwo.CategoryID}}">{{itemTwo.CategoryTitle}}</view>
+      </block>
+    </block>
+  </view>
+</scroll-view>
+<!--右侧栏-->
+<scroll-view scroll-y style="height: 100%;" class="nav_right"  scroll-top="{{scrollTop}}">
+<view>
+<image class='oneitemimg' mode="aspectFit" src='{{imgPath}}'></image>
+</view>
+  <view >
+    <!--如果有数据，才遍历项-->
+    <view class='item_right' wx:if="{{navRightItems[curIndex].DataList}}">
+      <block wx:for="{{navRightItems}}" wx:for-item="itemTwo">
+        <viem class='twotitle' id ='CategoryID{{itemTwo.CategoryID}}'>
+          <text>{{itemTwo.CategoryTitle}}</text>
+        </viem>
+        <view>
+          <block wx:for="{{itemTwo.DataList}}">
+            <view class="nav_right_items" catchtap="getGoodsList" data-id='{{item.CategoryID}}'>
+             
+                <!--用view包裹图片组合，如果有图片就用，无图片提供就使用50x30的这个默认图片-->
+                <view>
+                  <block wx:if="{{item.PictureFilePath}}">
+                    <image src="{{item.PictureFilePath}}"></image>
+                  </block>
+                  <block wx:else>
+                    <image src="http://temp.im/50x30"></image>
+                  </block>
+                </view>
+                <!--如果有文字，就用文字；无文字就用其他-->
+                <view wx:if="{{item.CategoryTitle}}">
+                  <text>{{item.CategoryTitle}}</text>
+                </view>
+                <view wx:else>
+                  <text>{{item.CategoryTitle}}</text>
+                </view>
+             
+            </view>
+          </block>
+        </view>
+      </block>
+      <view style='height: 500px;'></view>
+    </view>
+    <!--如果无数据，则显示数据-->
+    <view wx:else>暂无数据</view>
+  </view>
+</scroll-view>

@@ -1,0 +1,175 @@
+.backimg {
+  width: 100%;
+  height: 190px;
+}
+
+.backview {
+  background-color: white;
+  width: 85%;
+  position: absolute;
+  left: 20px;
+  top: 130px;
+  padding: 8px;
+}
+
+.userimg {
+  width: 120rpx;
+  height: 120rpx;
+  margin: 10rpx;
+  border-radius: 100%;
+}
+
+.user_2 {
+  display: flex;
+  flex-direction: column;
+  line-height: 50rpx;
+  margin-top: 22rpx;
+}
+
+.username {
+  font-size: 30rpx;
+  font-weight: 600;
+}
+
+.usermotto {
+  font-size: 12px;
+  color: #999;
+}
+
+.img-line {
+  width: 100px;
+  height: 1px;
+}
+
+.text-month {
+  font-size: 15px;
+  margin: 0px 10px;
+}
+
+.view-month {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 15px 0px;
+}
+
+.view-giftinfo {
+  display: flex;
+  flex-direction: row;
+  padding: 0 10px;
+}
+
+.view-img {
+  margin: 10px;
+}
+
+.giftimg {
+  width: 80px;
+  height: 80px;
+}
+
+.view-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 10px 0px;
+  height: 80px;
+}
+
+.giftname {
+  font-size: 15px;
+}
+
+.text-p-c {
+  font-size: 13px;
+  color: #999;
+}
+
+.view-shuoming {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0px;
+}
+
+.title-shuoming {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.title-1 {
+  font-size: 12px;
+  color: #999;
+  line-height: 23px;
+}
+
+.view-list {
+  background-size: 100% 100%;
+  margin-top: 10px;
+  display: flex;
+}
+
+.view-list-item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  padding: 8px;
+  width: 19%;
+  text-align: center;
+  color: white;
+  line-height: 25px;
+}
+
+.view-list-month {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.text-title {
+  color: rgb(180, 180, 180);
+}
+
+.view-item-giftinfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width:54%;
+
+}
+
+.view-item-img {
+  margin: 10px;
+}
+
+.item-giftimg {
+  width: 50px;
+  height: 50px;
+}
+
+.view-item-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 50px;
+  width: 120px;
+  color: white;
+}
+
+.item-giftname {
+  font-size: 15px;
+  overflow: hidden;
+  line-height: 26px;
+}
+
+.text-item-p-c {
+  font-size: 12px;
+}
+
+.text-1 {
+  color: white;
+  display: flex;
+  align-items: center;
+  width: 80px;
+  justify-content: center;
+  font-weight: 600;
+}

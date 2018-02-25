@@ -1,0 +1,32 @@
+@import "../../template/goods_template.wxss";
+view{
+  background-color: white;
+}
+.titleTab {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 10rpx;
+  border-top: 1px solid #ededed;
+  line-height: 66rpx;
+}
+
+.titleTab text {
+  font-size: 24rpx;
+}
+
+
+
+.titleTab text {
+  font-size: 24rpx;
+}
+
+.goodsinfo {
+  margin-bottom: 10rpx;
+}
+
+.goodslist {
+  height: 1300px;
+  background-color:#F2F2F2;
+
+}

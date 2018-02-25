@@ -1,0 +1,61 @@
+<view class="top-tab">
+  <view class="top-tab-item {{currentTopItem==idx ? 'active' : ''}}" wx:for="{{topTabItems}}" wx:for-index="idx" data-idx="{{idx}}" bindtap="switchTab">
+    <text style="margin: 3px 7px;"> {{item}}</text>
+  </view>
+</view>
+<swiper class="swiper" current="{{currentTopItem}}" bindchange="bindChange" duration="300" style="height:600px">
+  <swiper-item>
+    <view class="scrollView">
+      <block wx:for="{{allDataList}}" wx:for-item="item">
+        <view class='couponinfo'>
+          <view class='view-1'>
+            <text style="font-size: 17px;">{{item.BaseModel.CouponTypeName}}</text>
+            <text style="font-size: 13px;">￥<text style="font-size: 20px;margin: 0px 5px;">{{item.BaseModel.CouponMoney}}</text>满{{item.BaseModel.GetToMeney}}元可用</text>
+          </view>
+          <image class='img-1' mode='aspectFill' src='/images/jvchi3x.png'></image>
+          <view class='view-2'>
+            <text>使用期限</text>
+            <text>{{item.BaseModel.BeginTime}}</text>
+            <text>{{item.BaseModel.EndTime}}</text>
+          </view>
+        </view>
+      </block>
+    </view>
+  </swiper-item>
+    <swiper-item>
+    <view class="scrollView">
+      <block wx:for="{{topayDataList}}" wx:for-item="item">
+        <view class='couponinfo'>
+          <view class='view-1'>
+            <text style="font-size: 17px;">{{item.BaseModel.CouponTypeName}}</text>
+            <text style="font-size: 13px;">￥<text style="font-size: 20px;margin: 0px 5px;">{{item.BaseModel.CouponMoney}}</text>满{{item.BaseModel.GetToMeney}}元可用</text>
+          </view>
+          <image class='img-1' mode='aspectFill' src='/images/jvchi3x.png'></image>
+          <view class='view-2'>
+            <text>使用期限</text>
+            <text>{{item.BaseModel.BeginTime}}</text>
+            <text>{{item.BaseModel.EndTime}}</text>
+          </view>
+        </view>
+      </block>
+    </view>
+  </swiper-item>
+    <swiper-item>
+    <view class="scrollView">
+      <block wx:for="{{togetDataList}}" wx:for-item="item">
+        <view class='couponinfo'>
+          <view class='view-1'>
+            <text style="font-size: 17px;">{{item.BaseModel.CouponTypeName}}</text>
+            <text style="font-size: 13px;">￥<text style="font-size: 20px;margin: 0px 5px;">{{item.BaseModel.CouponMoney}}</text>满{{item.BaseModel.GetToMeney}}元可用</text>
+          </view>
+          <image class='img-1' mode='aspectFill' src='/images/jvchi3x.png'></image>
+          <view class='view-2'>
+            <text>使用期限</text>
+            <text>{{item.BaseModel.BeginTime}}</text>
+            <text>{{item.BaseModel.EndTime}}</text>
+          </view>
+        </view>
+      </block>
+    </view>
+  </swiper-item>
+</swiper>

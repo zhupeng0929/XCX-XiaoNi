@@ -1,0 +1,60 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/index/index",
+    "pages/mine/mine",
+    "pages/goods/detail/detail",
+    "pages/goods/goods",
+    
+    "pages/logs/logs",
+    "pages/find/find",
+    "pages/shop/shop",
+    "pages/category/goodslist/goodslist",
+    "pages/category/category",
+    "pages/template/find_template",
+    "pages/template/goods_template_2",
+    "pages/orderlist/orderlist",
+    "pages/template/order_template",
+    "pages/poingift/pointgift",
+    "pages/coupon/coupon",
+    "pages/takegift/takegift",
+    "pages/poingift/giftdetail"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "小尼定制",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "borderStyle": "white",
+    "color": "#999999",
+    "selectedColor": "#ff4200",
+    "backgroundColor": "#FFFFFF",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "images/nav_home3x.png",
+        "selectedIconPath": "images/nav_home_active3x.png"
+      },
+      {
+        "pagePath": "pages/goods/goods",
+        "text": "商城",
+        "iconPath": "images/nav_pro3x.png",
+        "selectedIconPath": "images/nav_pro_active3x.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "images/nav_mine3x.png",
+        "selectedIconPath": "images/nav_mine_active3x.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}

@@ -1,0 +1,27 @@
+<template name="shopTemplate">
+<view class="shopcontainer">
+  <view style='margin-left:20rpx'>
+    <image wx:if="{{ImgFilePath}}" class='shopimg' src='{{ImgFilePath}}'></image>
+    <image wx:else class='shopimg' src='/images/mrfwd.png'></image>
+  </view>
+  <view class='shopinfo'>
+    <view style='display:flex;flex-direction: row;justify-content:space-between;'>
+      <text class='shopname' >{{CompanyName}}</text>
+      <image class='iconimg' src='/images/jin.png' style='float:right;margin-top:10rpx;'></image>
+    </view>
+    <view>
+      <image class='iconimg' src='/images/quyu.png'></image>
+      <text style='color:#999'>{{ProvinceName}}{{CityName}}</text>
+    </view>
+    <view style='margin-bottom:10rpx'>
+      <image class='iconimg' src='/images/sjlisttel.png'></image>
+      <text style='color:#ff4200;'>{{CompanyTel}}</text>
+    </view>
+    <view style='border-bottom: 1px solid #ededed;margin:24rpx 0 10rpx 0;'></view>
+    <view>
+      <image class='iconimg' src='/images/address_s.png'></image>
+      <text style='color:#999'>{{title}}</text>
+    </view>
+  </view>
+</view>
+</template>

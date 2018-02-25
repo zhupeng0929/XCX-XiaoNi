@@ -1,0 +1,50 @@
+<template name="findTemplate">
+
+  <view class='fing-container'>
+
+    <view style='display:flex;flex-direction:row;justify-content:space-between;padding-top:20rpx;'>
+      <view style='display:flex;flex-direction:row;'>
+        <image class='userimg' mode='aspectFill' src='{{UserImg}}'></image>
+        <view class='user_2'>
+          <text class='username'>{{UserName}}</text>
+          <text class='usermotto'>{{Motto}}</text>
+        </view>
+      </view>
+      <text class='time'>{{CreateTime}}</text>
+    </view>
+
+    <view style='display:flex;flex-direction:row;padding:20rpx;'>
+
+      <image wx:if="{{imgCount<3}}" class='img_l_2' mode='aspectFill' src='{{FindImgs[0].FilePath}}'></image>
+      <image wx:else class='img_l_1' mode='aspectFill' src='{{FindImgs[0].FilePath}}'></image>
+      <view wx:if="{{imgCount>2}}" style='display:flex;flex-direction:column;'>
+        <image class='img_r' mode='aspectFill' src='{{FindImgs[1].FilePath}}' style="margin-bottom: 5rpx;"></image>
+        <image class='img_r' mode='aspectFill' src='{{FindImgs[2].FilePath}}' style="margin-top: 5rpx;"></image>
+      </view>
+
+    </view>
+
+    <text class='content'>{{FindContentSub}}</text>
+
+    <view class='view_icon'>
+      <view class='view_icon_1'>
+        <view class='view_icon_2'>
+          <image class='image_icon' src='/images/praise.png' mode="aspectFit"></image>
+          <text class='icon_text'>{{LikeCount}}</text>
+        </view>
+        <view class='view_icon_2'>
+          <image class='image_icon' src='/images/message.png'></image>
+          <text class='icon_text'>{{EvaluateCount}}</text>
+        </view>
+      </view>
+
+      <image class='image_icon share_img' src='/images/share3x.png'></image>
+
+
+
+    </view>
+
+
+  </view>
+ 
+</template>

@@ -1,0 +1,78 @@
+<import src="/components/wxParse/wxParse.wxml" />
+<view class="top-tab">
+  <view class="top-tab-item {{currentTopItem==idx ? 'active' : ''}}" wx:for="{{topTabItems}}" wx:for-index="idx" data-idx="{{idx}}" bindtap="switchTab">
+    {{item}}
+  </view>
+</view>
+
+<swiper class="swiper" current="{{currentTopItem}}" bindchange="bindChange" duration="300" style="height:600px">
+
+  <!--全部-->
+  <swiper-item>
+    <!-- <scroll-view class="scrollView" scroll-y="true" bindscrolltolower="loadMoreData" >
+     <block wx:for="{{allDataList}}" wx:for-item="item">
+          <navigator url="detail?id={{item.id}}">
+            <template is="mainTabCell" data="{{item}}" />
+          </navigator>
+      </block> 
+    </scroll-view> -->
+    <swiper class='swiperimg' indicator-dots="{{indicatorDots}}" indicator-dots="true" indicator-color="#999" indicator-active-color="#ffffff">
+      <block wx:for="{{goodsdetailinfo.PictureList}}">
+        <swiper-item>
+          <image src="{{item.ImgFilePath}}" mode="aspectFill" class="slide-image" />
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class='goodsinfo'>
+      <text class='goodsname'>{{goodsdetailinfo.GoodsName}}</text>
+      <text class='text_0'>{{goodsdetailinfo.GoodsTitle}}</text>
+      <view style='display:flex;flex-direction: row;justify-content:space-between;'>
+        <view>
+          <text class='text_0' style='color:#fc4500;'>¥<text class='text_price'>{{goodsdetailinfo.GoodsPrice}}</text></text>
+        </view>
+        <view style='padding-right:20rpx;'>
+          <text class='text_1' space="nbsp" decode="&nbsp;">{{goodsdetailinfo.MinOrderQuantity}}{{goodsdetailinfo.UnitName}}起订&nbsp;&nbsp;|&nbsp;&nbsp;工期：{{goodsdetailinfo.CustomHours}}天</text>
+        </view>
+      </view>
+    </view>
+    <view class="goodsinfo" style='margin-top:10px;'>
+      <text class='goodsname' style='padding:10px 0px;'>产品参数:</text>
+      <view style='width:100%;height:1px;background-color:#e5e5e5;'></view>
+      <view style='display:flex;flex-direction: row;justify-content:space-between;padding:10px 0px;'>
+        <text class='goodsname'>请选择定制工艺</text>
+        <image style='width:10px;height:10px;margin-top:6px;' src='/images/linkjt3x.png'></image>
+      </view>
+    </view>
+
+  </swiper-item>
+
+  <!--视频-->
+  <swiper-item>
+    <!-- <web-view src='http://user.xiaoni.com/goodsdetail.aspx?goodsid={{goodsdetailinfo.GoodsID}}'></web-view>  -->
+    <view class="wxParse" style='font-size:0rpx;height:100%;'>
+      <template is="wxParse" data="{{wxParseData:GoodsDesc.nodes}}" />
+    </view>
+  </swiper-item>
+
+
+
+
+</swiper>
+<!-- <view class="wx-view_IfJZkK2">
+  <view style="display: flex;flex-direction: row;">
+    <view class='.tab-kf-gz'>
+      <image src='/images/ml_order_sh3x.png' class='tab-icon'></image>
+      <text class='tab-text'>客服</text>
+    </view>
+    <view class='.tab-kf-gz'>
+      <image src='/images/shoucang3x.png' class='tab-icon'></image>
+      <text class='tab-text'>关注</text>
+    </view>
+
+  </view>
+  <view style='display:flex;width:60%;'>
+  <text class='gwc'style="border: solid;border-color:#fc4500;border-width: 1px;color:#fc4500;;" >加入购物车</text>
+  <text class='gwc' style="color:#fff;background-color: #fc4500;" >立即购买</text>
+   
+  </view>
+</view> -->

@@ -1,0 +1,22 @@
+<import src="../template/goods_template_2.wxml" />
+<view class="wx-view_IfJZkK2">
+  <navigator url='/pages/category/category'>
+    <view class="wx-view_u7aIQl">
+      <view class="wx-view_3ggkNG">
+        <image class="wx-image_SC1alK2" mode="aspectFill" src="/images/list3x.png" />
+      </view>
+    </view>
+  </navigator>
+  <!-- <view class="wx-view_u7aIQl">
+    <view class="wx-view_3ggkNG">
+      <image class="wx-image_SC1alK2" mode="aspectFill" src="/images/cat3x.png" />
+    </view>
+  </view> -->
+</view>
+<view class='goodscontainer'>
+  <block wx:for="{{goodsinfo}}">
+  
+    <template  is="goodsTemplate2" data="{{...item}}" />
+   
+  </block>
+</view>

@@ -1,0 +1,3 @@
+<web-view src='http://user.xiaoni.com/giftdetail.aspx?goodsid={{goodsid}}'>
+
+</web-view>

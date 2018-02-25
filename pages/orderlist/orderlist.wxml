@@ -1,0 +1,60 @@
+<import src="../template/order_template.wxml" />
+
+<view class="top-tab">
+  <view class="top-tab-item {{currentTopItem==idx ? 'active' : ''}}" wx:for="{{topTabItems}}" wx:for-index="idx" data-idx="{{idx}}" bindtap="switchTab">
+   <text style="margin: 3px 7px;"> {{item}}</text>
+  </view>
+</view>
+<swiper class="swiper" current="{{currentTopItem}}" bindchange="bindChange" duration="300" style="height:600px">
+
+  <!--全部-->
+  <swiper-item>
+    <view class="scrollView" >
+      <block wx:for="{{allDataList}}" wx:for-item="item">
+        <navigator url="detail?id={{item.id}}">
+          <template is="orderTemplate" data="{{...item}}" />
+        </navigator>
+      </block>
+    </view>
+  </swiper-item>
+  <swiper-item>
+      <view class="scrollView">
+      <block wx:for="{{topayDataList}}" wx:for-item="item">
+        <navigator url="detail?id={{item.id}}">
+          <template is="orderTemplate" data="{{...item}}" />
+        </navigator>
+      </block>
+    </view>
+  </swiper-item>
+  <swiper-item>
+      <view class="scrollView" >
+      <block wx:for="{{togetDataList}}" wx:for-item="item">
+        <navigator url="detail?id={{item.id}}">
+          <template is="orderTemplate" data="{{...item}}" />
+        </navigator>
+      </block>
+    </view>
+  </swiper-item>
+  <swiper-item>
+      <view class="scrollView" >
+      <block wx:for="{{havegetDataList}}" wx:for-item="item">
+        <navigator url="detail?id={{item.id}}">
+          <template is="orderTemplate" data="{{...item}}" />
+        </navigator>
+      </block>
+    </view>
+  </swiper-item>
+  <swiper-item>
+      <view class="scrollView" >
+      <block wx:for="{{cancelDataList}}" wx:for-item="item">
+        <navigator url="detail?id={{item.OrderID}}">
+          <template is="orderTemplate" data="{{...item}}" />
+        </navigator>
+      </block>
+    </view>
+  </swiper-item>
+
+
+
+
+</swiper>

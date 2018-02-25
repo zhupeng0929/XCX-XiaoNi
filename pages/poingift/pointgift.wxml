@@ -1,0 +1,31 @@
+<view class='top'>
+  <view class='view-img'>
+    <image class='giftimg' src='/images/jifen.png'></image>
+  </view>
+  <view class='view-text'>
+    <text class='text-1'>当前剩余积分</text>
+    <text class='text-2'>{{xn_userInfo.Points}}</text>
+    <text class='text-3'>如何获得积分</text>
+  </view>
+</view>
+<view style='display: flex;padding: 10px 0px;align-items:center;'>
+  <view style='border: 2px solid #fc4500;border-radius: 5px;height: 15px;'></view>
+  <text style='font-size: 12px;margin-left: 10px;'>可兑换礼品</text>
+</view>
+<view class='goodscontainer'>
+  <block wx:for="{{giftlist}}">
+
+    <view catchtap="gotogiftdetail" data-postId="{{item.GoodsID}}" class='goodsinfo'>
+      <image class='goodsimg' src='{{item.PictureImg}}'></image>
+      <view style="height: 50px; width:170px;vertical-align:middle;display:table-cell;">
+        <text class='goodsname text_0'>{{item.GoodsName}}</text>
+      </view>
+
+      <view class='view-money'>
+        <text class='text_0'>积分</text>
+        <text class='text_price'>{{item.PointCount}}</text>
+      </view>
+    </view>
+
+  </block>
+</view>

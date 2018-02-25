@@ -1,0 +1,47 @@
+@import "../template/goods_template_2.wxss";
+view{
+  background-color:#fff;
+}
+.wx-view_IfJZkK2 {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgb(209, 209, 209);
+  width: 100%;
+  position: fixed;
+  
+}
+
+.wx-view_u7aIQl {
+  display: flex;
+}
+
+.wx-view_3ggkNG {
+  display: flex;
+  text-align: left;
+  justify-content: center;
+}
+
+.wx-image_SC1alK2 {
+  width: 20px;
+  height: 20px;
+  padding: 10rpx 0rpx 10rpx 20rpx;
+}
+
+.wx-image_gr9dEA {
+  width: 80px;
+  height: 20px;
+}
+
+.wx-view_u7aIQl {
+  display: flex;
+}
+
+.goodscontainer {
+  display: flex;
+  justify-content: space-between;
+  padding: 20rpx;
+  flex-wrap: wrap;
+  background-color: #f2f2f2;
+  padding-top:40px;
+
+}

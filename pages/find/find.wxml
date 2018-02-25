@@ -1,0 +1,21 @@
+<view class='fing-container'>
+  <view style='display:flex;flex-direction:row;justify-content:space-between;padding-top:20rpx;'>
+    <view style='display:flex;flex-direction:row;'>
+      <image class='userimg' mode='aspectFill' src='{{findinfo.UserImg}}'></image>
+      <view class='user_2'>
+        <text class='username'>{{findinfo.UserName}}</text>
+        <text class='usermotto'>{{findinfo.Motto}}</text>
+      </view>
+    </view>
+    <text class='time'>{{findinfo.CreateTime}}</text>
+  </view>
+  <view style='margin:0 10rpx'>
+    <text class='content'>{{findinfo.FindContent}}</text>
+  </view>
+  <block wx:for="{{findinfo.FindImgs}}" wx:for-item="item">
+    <image style='width:97%;margin:0 10rpx;border-radius:7px;' mode='widthFix' src='{{item.FilePath}}'></image>
+    <view style='font-size:15px;margin:10px;'>
+      <text>{{item.Content}}</text>
+    </view>
+  </block>
+</view>

@@ -1,0 +1,21 @@
+<template name="goodsTemplate2">
+
+  <view catchtap="gotogoodsdetail" data-postId="{{GoodsID}}" class='goodsinfo'>
+    <image class='goodsimg' src='{{PictureImg}}'></image>
+    <view>
+      <text class='goodsname text_0'>{{GoodsName}}</text>
+    </view>
+    <view>
+      <text class='text_0' style='color:#999'>{{GoodsTitle}}</text>
+    </view>
+   
+    <view style='display:flex;flex-direction: row;justify-content:space-between;margin-top:20rpx;'>
+    <view>
+      <text class='text_0'  style='color:#ff4200;'>¥<text class='text_price'>{{GoodsPrice}}</text></text></view>
+      <view style='padding-right:20rpx;'>
+      <text class='text_1' >{{Characteristic}}</text>
+      </view>
+    </view>
+  </view>
+
+</template>

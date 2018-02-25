@@ -1,0 +1,78 @@
+view {
+  background-color: white;
+}
+
+.orderinfo {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom:10px;
+}
+.ordergoodslist{
+border-bottom: 1px solid #f5f5f5;
+}
+.order-goods {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  
+  padding-bottom: 10px;
+}
+
+.ordergoodsinfo {
+  width: 290px;
+  margin-left: 10px;
+}
+
+.order-img {
+  width: 65px;
+  height: 65px;
+  border-radius: 5px;
+}
+
+.order-goodsname {
+  font-size: 13px;
+}
+
+.goodsinfo {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0px;
+}
+
+.gongyi {
+  font-size: 12px;
+  color: #666;
+}
+
+.goodsprice {
+  font-size: 12px;
+}
+
+.view-goodscount {
+  text-align: right;
+  line-height: 12px;
+}
+
+.goodscount {
+  font-size: 13px;
+  color: #999;
+}
+
+.view-money {
+  text-align: right;
+  color: #ff4200;
+  margin-top: 5px;
+}
+
+.text_0 {
+  font-size: 24rpx;
+  vertical-align: middle;
+  margin: 0 10rpx;
+}
+
+.text_price {
+  font-size: 20px;
+  vertical-align: text-bottom;
+  font-weight: 600;
+}

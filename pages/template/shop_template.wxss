@@ -1,0 +1,34 @@
+.shopcontainer {
+  display: flex;
+  flex-direction: row;
+ padding-top: 20rpx;
+ padding-bottom: 20rpx;
+}
+
+.shopinfo {
+  flex-direction: column;
+  width: 100%;
+}
+.shopname{
+  font-size: 35rpx;
+  font-weight:bold;
+  
+}
+.shopimg {
+  height: 150rpx;
+  width: 150rpx;
+}
+
+.iconimg {
+  height: 30rpx;
+  width: 30rpx;
+}
+
+text {
+  font-size: 24rpx;
+  vertical-align: middle;
+}
+image{
+   vertical-align: middle;
+   margin-right: 20rpx;
+}

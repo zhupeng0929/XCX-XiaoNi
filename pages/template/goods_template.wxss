@@ -1,0 +1,38 @@
+.goodscontainer {
+  display: flex;
+  flex-direction: row;
+  padding: 20rpx;
+  margin-bottom:5px;
+
+}
+
+.goodsinfo {
+  flex-direction: column;
+width:250px;
+
+}
+
+.goodsname {
+  font-size: 27rpx;
+  font-weight: 600;
+}
+
+.goodsimg {
+  height: 200rpx;
+  width: 200rpx;
+}
+
+.iconimg {
+  height: 30rpx;
+  width: 30rpx;
+}
+
+text {
+  font-size: 22rpx;
+  vertical-align: middle;
+}
+
+image {
+  vertical-align: middle;
+  margin-right: 20rpx;
+}
