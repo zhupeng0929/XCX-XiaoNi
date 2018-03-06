@@ -28,27 +28,27 @@
   },
   "tabBar": {
     "borderStyle": "white",
-    "color": "#999999",
-    "selectedColor": "#ff4200",
+    "color": "#000",
+    "selectedColor": "#000",
     "backgroundColor": "#FFFFFF",
     "list": [
       {
         "pagePath": "pages/home/home",
         "text": "首页",
-        "iconPath": "images/nav_home3x.png",
-        "selectedIconPath": "images/nav_home_active3x.png"
+        "iconPath": "images/nav_home@2x.png",
+        "selectedIconPath": "images/nav_home_active@2x.png"
       },
       {
         "pagePath": "pages/goods/goods",
         "text": "商城",
-        "iconPath": "images/nav_pro3x.png",
-        "selectedIconPath": "images/nav_pro_active3x.png"
+        "iconPath": "images/44定制.png",
+        "selectedIconPath": "images/44定制down.png"
       },
       {
         "pagePath": "pages/mine/mine",
         "text": "我的",
-        "iconPath": "images/nav_mine3x.png",
-        "selectedIconPath": "images/nav_mine_active3x.png"
+        "iconPath": "images/nav_mine@2x.png",
+        "selectedIconPath": "images/nav_mine_active@2x.png"
       }
     ]
   },

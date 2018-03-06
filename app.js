@@ -56,10 +56,14 @@ App({
                     that.globalData.xn_userInfo = xn_userInfo;
                     //  wx.setStorageSync('openid', encryptInfo.openId); // 单独存储openid
                     wx.setStorageSync('xn_userInfo', xn_userInfo); // 存储解密之后的数据
+
+                    if (that.xn_userInfoReadyCallback) {
+                      that.xn_userInfoReadyCallback(xn_userInfo)
+                    }
                   } else {
                     console.log('解密失败')
                   }
-
+                 
                 },
                 fail: function (res) {
                   console.log(res);
@@ -123,5 +127,49 @@ App({
       return timeS.slice(0, 2) >= 12 ? '下午' + (timeS.slice(0, 2) == 12 ? 12 : timeS.slice(0, 2) - 12) + timeS.slice(2, 5) : '上午' + timeS.slice(0, 5);
     }
 
+  },
+  findArrayIndex: function findArrayIndex(array, feature, all = true) {
+    for(let index in array) {
+      let cur = array[index];
+      if (feature instanceof Object) {
+        let allRight = true;
+        for (let key in feature) {
+          let value = feature[key];
+          if (cur[key] == value && !all) return index;
+          if (all && cur[key] != value) {
+            allRight = false;
+            break;
+          }
+        }
+        if (allRight) return index;
+      } else {
+        if (cur == feature) {
+          return index;
+        }
+      }
+    }
+    return -1;
+  },
+  findArray: function findArray(array, feature, all = true) {
+    for (let index in array) {
+      let cur = array[index];
+      if (feature instanceof Object) {
+        let allRight = true;
+        for (let key in feature) {
+          let value = feature[key];
+          if (cur[key] == value && !all) return cur;
+          if (all && cur[key] != value) {
+            allRight = false;
+            break;
+          }
+        }
+        if (allRight) return cur;
+      } else {
+        if (cur == feature) {
+          return index;
+        }
+      }
+    }
+    return -1;
   }
 })

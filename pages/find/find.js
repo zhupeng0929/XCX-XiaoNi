@@ -80,4 +80,9 @@ Page({
      
     });
   },
+   makePhoneCall:function(){
+     wx.makePhoneCall({
+       phoneNumber: '4007108886' 
+     })
+   }
 })

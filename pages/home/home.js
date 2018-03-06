@@ -1,5 +1,5 @@
 // pages/home/home.js
-var app = getApp()
+var app = getApp();
 Page({
 
   /**
@@ -8,17 +8,42 @@ Page({
   data: {
     page: 1,
     pageSize: 30,
-    findhotinfo:[]
+    findhotinfo:[],
+    userid: 0,
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    //this.getswiperimgs();
-    //this.getshopsinfo();
-    //this.getschemesinfo();
-    this.getfindinfo(this.data.page);
+ var that=this;
+    if (app.globalData.xn_userInfo) {
+      this.setData({
+        userid: app.globalData.xn_userInfo.UserID
+      })
+    } else if (this.data.canIUse) {
+      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
+      // 所以此处加入 callback 以防止这种情况
+      app.xn_userInfoReadyCallback = function(res) {
+        console.log(res);
+        that.setData({
+          userid: res.UserID
+        });
+        that.getfindinfo(that.data.page);
+      }
+    } else {
+      // 在没有 open-type=getUserInfo 版本的兼容处理
+      wx.getUserInfo({
+        success: res => {
+          app.globalData.userInfo = res.userInfo
+          this.setData({
+            
+          })
+        }
+      })
+    }
+    
   },
 
   /**
@@ -72,8 +97,27 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function (res) {
 
+var that=this;
+   var findid = parseInt(res.target.id);
+    var infos = app.findArray(this.data.findhotinfo, { FindID: findid });
+
+    if (res.from === 'button') {
+      // 来自页面内转发按钮
+      console.log(res.target)
+    }
+    return {
+      title: infos.FindSubTitle,
+      path: '/pages/find/find?findid=' + findid,
+      imageUrl: infos.FindImgs[0].FilePath,
+      success: function (res) {
+        // 转发成功
+      },
+      fail: function (res) {
+        // 转发失败
+      }
+    }
   },
   //获取滚动图片
   getswiperimgs: function () {
@@ -120,7 +164,7 @@ Page({
     });
   },//获取发现列表
   getfindinfo: function (page){
-    var url = "common/find/getfindfollowlist.html?appid=99999999&sign=&type=1&page=" + page;
+    var url = "common/find/getfindfollowlist.html?appid=99999999&sign=&type=1&page=" + page + "&userid=" + this.data.userid;
     var that=this;
     app.sendRequest(url, (data) => {
       var repFindinfo = data.Data;
@@ -144,4 +188,7 @@ Page({
       }
     });
   },
+  dianzan:function(e){
+    console.log('点赞');
+  }
 })

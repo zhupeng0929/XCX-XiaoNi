@@ -86,6 +86,9 @@ Page({
           if (goodstitle.length >= 12) {
             subject.GoodsTitle = goodstitle.substring(0, 12) + "...";
           }
+          if (subject.Characteristic==""){
+            subject.Characteristic ="精选";
+          }
         }
         that.setData({
           goodsinfo: that.data.goodsinfo.concat(repGoodsinfo),//热门发现

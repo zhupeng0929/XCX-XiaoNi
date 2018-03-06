@@ -1,4 +1,4 @@
-<view class='fing-container'>
+<view class='find-container'>
   <view style='display:flex;flex-direction:row;justify-content:space-between;padding-top:20rpx;'>
     <view style='display:flex;flex-direction:row;'>
       <image class='userimg' mode='aspectFill' src='{{findinfo.UserImg}}'></image>
@@ -18,4 +18,20 @@
       <text>{{item.Content}}</text>
     </view>
   </block>
+</view>
+<view class='findtools-view'>
+  <view class='find-action-view'>
+    <image mode='aspectFit' src='/images/zan.png'></image>
+    <text>赞 · {{findinfo.LikeCount}}</text>
+  </view>
+  <view class='find-action-line'></view>
+  <view class='find-action-view'>
+    <image mode='aspectFit' src='/images/pinglun.png'></image>
+    <text>评论 ·  {{findinfo.EvaluateCount}}</text>
+  </view>
+  <view class='find-action-line'></view>
+  <view class='find-action-view' catchtap='makePhoneCall'>
+    <image mode='aspectFit' src='/images/kefu.png'></image>
+    <text>在线咨询</text>
+  </view>
 </view>
