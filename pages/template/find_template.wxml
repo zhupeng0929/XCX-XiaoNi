@@ -1,6 +1,6 @@
 <template name="findTemplate">
 
-  <view class='fing-container'>
+  <view class='find-container'>
     <navigator url='/pages/find/find?findid={{FindID}}'>
       <view style='display:flex;flex-direction:row;justify-content:space-between;padding-top:20rpx;'>
         <view style='display:flex;flex-direction:row;'>

@@ -1,7 +1,10 @@
 .find-container {
   display: flex;
   flex-direction: column;
-  padding: 20rpx;
+  margin: 5px;
+  background-color: white;
+  border-radius: 5px;
+  padding: 5px;
 }
 
 .userimg {
@@ -93,9 +96,4 @@
 
 .share_img {
   margin-right: 15px;
-}
-
-view {
-  background-color: white;
-  border-radius: 7px;
 }

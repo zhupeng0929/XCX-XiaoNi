@@ -1,0 +1,65 @@
+<view class='userinfo'>
+  <view class='view-userinfo'>
+    <view>
+      <image class='touxiangimg' mode='aspectFit' src='{{xn_userInfo.ImgFilePath}}'></image>
+    </view>
+    <view class='view-text'>
+      <text class='textname'>{{xn_userInfo.NickName}}，{{datatime}}</text>
+      <text class='texthello'>欢迎来到定制中心，很高兴为您服务</text>
+    </view>
+  </view>
+
+
+</view>
+<view class='tool'>
+  <view class='tool-view-con'>
+    <button open-type="contact" style='border: 0;font-size: 0px;line-height: 24px;margin-left: 0px;margin-right: 0px;padding-left: 0;padding-right: 0;'>
+      <view class='tool-view'>
+        <image class='icon-img' src='/images/scheme_chat.png'></image>
+        <text class='ico-text'>在线咨询</text>
+      </view>
+      <view>
+        <text class='ico-text-1'>在线与客服聊天</text>
+      </view>
+    </button>
+  </view>
+  <view class='line'>
+  </view>
+  <view class='tool-view-con' catchtap='makephonecall'>
+    <view class='tool-view'>
+
+      <image class='icon-img' src='/images/scheme_phone.png'></image>
+      <text class='ico-text'>客服热线</text>
+
+    </view>
+    <view>
+      <text class='ico-text-1'>直接拨打电话</text>
+    </view>
+  </view>
+  <view class='line'>
+  </view>
+  <view class='tool-view-con'>
+    <navigator url='/pages/shop/shop'>
+      <view class='tool-view'>
+        <image class='icon-img' src='/images/scheme_location.png'></image>
+        <text class='ico-text'>附近门店</text>
+      </view>
+      <view>
+        <text class='ico-text-1'>查看附近体验店</text>
+      </view>
+    </navigator>
+  </view>
+</view>
+<view class='view-linggan'>
+  <text class='text-linggan'>灵感库</text>
+  <view class='findcategory_con'>
+    <block wx:for="{{findcategory}}">
+      <navigator class='findcategory' url='/pages/customized/linggandetail?categoryid={{item.CategoryID}}'>
+        <!-- <view class='findcategory'> -->
+        <image class='cate_img' src='{{item.IconFilePath}}'></image>
+        <text class='cate_text'>{{item.CategoryName}}</text>
+        <!-- </view> -->
+      </navigator>
+    </block>
+  </view>
+</view>

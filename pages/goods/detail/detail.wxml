@@ -48,31 +48,8 @@
 
   <!--视频-->
   <swiper-item>
-    <!-- <web-view src='http://user.xiaoni.com/goodsdetail.aspx?goodsid={{goodsdetailinfo.GoodsID}}'></web-view>  -->
     <view class="wxParse" style='font-size:0rpx;height:100%;'>
       <template is="wxParse" data="{{wxParseData:GoodsDesc.nodes}}" />
     </view>
   </swiper-item>
-
-
-
-
 </swiper>
-<!-- <view class="wx-view_IfJZkK2">
-  <view style="display: flex;flex-direction: row;">
-    <view class='.tab-kf-gz'>
-      <image src='/images/ml_order_sh3x.png' class='tab-icon'></image>
-      <text class='tab-text'>客服</text>
-    </view>
-    <view class='.tab-kf-gz'>
-      <image src='/images/shoucang3x.png' class='tab-icon'></image>
-      <text class='tab-text'>关注</text>
-    </view>
-
-  </view>
-  <view style='display:flex;width:60%;'>
-  <text class='gwc'style="border: solid;border-color:#fc4500;border-width: 1px;color:#fc4500;;" >加入购物车</text>
-  <text class='gwc' style="color:#fff;background-color: #fc4500;" >立即购买</text>
-   
-  </view>
-</view> -->

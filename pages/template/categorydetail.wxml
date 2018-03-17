@@ -1,0 +1,10 @@
+<template name="categorydetail">
+
+  <view catchtap="gotogoodsdetail" data-postId="{{FindID}}" class='goodsinfo'>
+    <image class='goodsimg' mode='widthFix' src='{{HomeFilePath}}'></image>
+    <view>
+      <text class='goodsname text_0'>{{FindSubTitle}}</text>
+    </view>
+  </view>
+
+</template>

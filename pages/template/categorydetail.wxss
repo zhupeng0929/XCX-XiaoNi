@@ -1,0 +1,48 @@
+.goodsinfo {
+  flex-direction: column;
+  width: 49%;
+  border-radius: 14rpx;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.goodsname {
+  font-size: 27rpx;
+  font-weight: 600;
+  margin: 0 10rpx;
+}
+
+.goodsimg {
+  height: 367rpx;
+  width: 100%;
+  border-top-left-radius: 14rpx;
+  border-top-right-radius: 14rpx;
+}
+
+.iconimg {
+  height: 30rpx;
+  width: 30rpx;
+}
+
+.text_0 {
+  font-size: 26rpx;
+  vertical-align: middle;
+  margin: 0 10rpx;
+}
+
+image {
+  vertical-align: middle;
+  margin-right: 20rpx;
+}
+
+.text_1 {
+  color: white;
+  background-color: #ff4200;
+  padding: 2px;
+  border-radius: 3px;
+  
+  font-size: 22rpx;
+}
+.text_price{
+  font-size:20px;vertical-align:text-bottom;font-weight:600;margin-left:10rpx;
+}

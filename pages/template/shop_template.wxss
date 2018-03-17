@@ -1,22 +1,30 @@
 .shopcontainer {
   display: flex;
   flex-direction: row;
- padding-top: 20rpx;
- padding-bottom: 20rpx;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+  background-color: white;
+  margin: 0px 5px;
+  margin-bottom: 3px;
+
 }
 
 .shopinfo {
   flex-direction: column;
   width: 100%;
 }
-.shopname{
+
+.shopname {
   font-size: 35rpx;
-  font-weight:bold;
-  
+  font-weight: 500;
 }
+
 .shopimg {
   height: 150rpx;
   width: 150rpx;
+  border-radius: 5px;
+  vertical-align: middle;
+  margin-right: 20rpx;
 }
 
 .iconimg {
@@ -24,11 +32,7 @@
   width: 30rpx;
 }
 
-text {
+.text {
   font-size: 24rpx;
   vertical-align: middle;
-}
-image{
-   vertical-align: middle;
-   margin-right: 20rpx;
 }

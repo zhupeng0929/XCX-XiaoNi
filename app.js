@@ -30,7 +30,7 @@ App({
               var that = this;
               // 请求自己的服务器，解密用户信息 获取unionId等加密信息
               wx.request({
-                url:'https://api.xiaoni.com/user/memberUser/getwinxinuserinfo.html',//自己的服务接口地址
+                url: 'https://api.xiaoni.com/user/memberUser/getwinxinuserinfo.html',//自己的服务接口地址
                 method: 'POST',
                 header: {
                   'content-type': 'application/x-www-form-urlencoded'
@@ -38,11 +38,11 @@ App({
                 data: {
                   encryptedData: res.encryptedData,
                   iv: res.iv,
-                  code: this.globalData.code ,
+                  code: this.globalData.code,
                   rawData: res.rawData,
                   signature: res.signature,
-                  appid:99999999,
-                  sign:''
+                  appid: 99999999,
+                  sign: ''
                 },
                 success: function (data) {
                   //4.解密成功后 获取自己服务器返回的结果
@@ -63,7 +63,7 @@ App({
                   } else {
                     console.log('解密失败')
                   }
-                 
+
                 },
                 fail: function (res) {
                   console.log(res);
@@ -83,9 +83,9 @@ App({
     })
   },
   globalData: {
-    
+
     userInfo: null,
-    xn_userInfo:null,
+    xn_userInfo: null,
     doubanBase: "https://api.xiaoni.com/",
   },
   sendRequest: function (url, callBack) {
@@ -129,7 +129,7 @@ App({
 
   },
   findArrayIndex: function findArrayIndex(array, feature, all = true) {
-    for(let index in array) {
+    for (let index in array) {
       let cur = array[index];
       if (feature instanceof Object) {
         let allRight = true;
@@ -171,5 +171,14 @@ App({
       }
     }
     return -1;
+  },
+  showtime: function showtime() {
+    var now = new Date();
+    var hours = now.getHours();
+    var minutes = now.getMinutes();
+    var seconds = now.getSeconds()
+    var timeValue = "" + ((hours >= 12) ? "下午好" : "上午好")
+   
+    return timeValue;
   }
 })

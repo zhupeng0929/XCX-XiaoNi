@@ -1,14 +1,19 @@
 {
   "pages": [
+                      "pages/customized/customized",
+        "pages/shop/shop",
+"pages/template/shop_template",
+
+    "pages/customized/linggandetail",
+
     "pages/home/home",
     "pages/index/index",
     "pages/mine/mine",
     "pages/goods/detail/detail",
     "pages/goods/goods",
-    
     "pages/logs/logs",
     "pages/find/find",
-    "pages/shop/shop",
+
     "pages/category/goodslist/goodslist",
     "pages/category/category",
     "pages/template/find_template",
@@ -18,7 +23,8 @@
     "pages/poingift/pointgift",
     "pages/coupon/coupon",
     "pages/takegift/takegift",
-    "pages/poingift/giftdetail"
+    "pages/poingift/giftdetail",
+    "pages/template/categorydetail"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -39,8 +45,8 @@
         "selectedIconPath": "images/nav_home_active@2x.png"
       },
       {
-        "pagePath": "pages/goods/goods",
-        "text": "商城",
+        "pagePath": "pages/customized/customized",
+        "text": "定制",
         "iconPath": "images/44定制.png",
         "selectedIconPath": "images/44定制down.png"
       },

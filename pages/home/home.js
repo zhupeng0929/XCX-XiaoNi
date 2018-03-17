@@ -1,5 +1,12 @@
 // pages/home/home.js
 var app = getApp();
+const util = require("../../utils/util.js");
+var types = ["0", "1"];
+//1->全部;11->待付款;13->待收货;21->已完成;20->取消;
+var DATATYPE = {
+  ALLDATATYPE: "0",
+  TOPAYTYPE: "1",
+};
 Page({
 
   /**
@@ -8,16 +15,21 @@ Page({
   data: {
     page: 1,
     pageSize: 30,
-    findhotinfo:[],
+    findhotinfo: [],
     userid: 0,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    topTabItems: ["推荐", "商城"],
+    currentTopItem: 0,
+    viewheiht: 0,
+    pageindex: 1,
+    goodsinfo: [],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
- var that=this;
+    var that = this;
     if (app.globalData.xn_userInfo) {
       this.setData({
         userid: app.globalData.xn_userInfo.UserID
@@ -25,12 +37,12 @@ Page({
     } else if (this.data.canIUse) {
       // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
       // 所以此处加入 callback 以防止这种情况
-      app.xn_userInfoReadyCallback = function(res) {
+      app.xn_userInfoReadyCallback = function (res) {
         console.log(res);
         that.setData({
           userid: res.UserID
         });
-        that.getfindinfo(that.data.page);
+        
       }
     } else {
       // 在没有 open-type=getUserInfo 版本的兼容处理
@@ -38,14 +50,32 @@ Page({
         success: res => {
           app.globalData.userInfo = res.userInfo
           this.setData({
-            
+
           })
         }
       })
     }
-    
+    that.getfindinfo(that.data.page);
+    that.getgoodsinfo(that.data.pageindex);
+    wx.getSystemInfo({
+      success: function (res) {
+        that.setData({
+          viewheiht: (res.windowHeight - 37)
+        });
+      }
+    })
   },
+  //切换顶部标签
+  switchTab: function (e) {
+    // lastnumber = 0;
+    this.setData({
+      currentTopItem: e.currentTarget.dataset.idx
+    });
+    // 如果需要加载数据
 
+    // this.refreshNewData();
+
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -78,11 +108,20 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    this.setData({
-      findhotinfo: [],
-      page:1
-    });
-    this.getfindinfo(this.data.page);
+    if (this.data.currentTopItem == 0) {
+      this.setData({
+        findhotinfo: [],
+        page: 1
+      });
+      this.getfindinfo(this.data.page);
+    }
+    else {
+      this.setData({
+        goodsinfo: [],
+        pageindex: 1
+      });
+      this.getgoodsinfo(this.data.pageindex);
+    }
     wx.stopPullDownRefresh();
   },
 
@@ -90,17 +129,28 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    this.getfindinfo(this.data.page);
-    
-  },
+    if (this.data.currentTopItem == 0){
+      this.getfindinfo(this.data.page);
+    }
+    else
+    {
+      this.getgoodsinfo(this.data.pageindex);
+    }
 
+  },
+  loadMoreGoods:function(){
+    this.getgoodsinfo(this.data.pageindex);
+  },
+  loadMoreFind:function(){
+    this.getfindinfo(this.data.page);
+  },
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function (res) {
 
-var that=this;
-   var findid = parseInt(res.target.id);
+    var that = this;
+    var findid = parseInt(res.target.id);
     var infos = app.findArray(this.data.findhotinfo, { FindID: findid });
 
     if (res.from === 'button') {
@@ -144,7 +194,8 @@ var that=this;
         }
       }
       this.setData({
-        shopsinfo: data.Data
+        shopsinfo: data.Data,
+
       });
     });
   },
@@ -163,12 +214,12 @@ var that=this;
       });
     });
   },//获取发现列表
-  getfindinfo: function (page){
+  getfindinfo: function (page) {
     var url = "common/find/getfindfollowlist.html?appid=99999999&sign=&type=1&page=" + page + "&userid=" + this.data.userid;
-    var that=this;
+    var that = this;
     app.sendRequest(url, (data) => {
       var repFindinfo = data.Data;
-      if (repFindinfo.length>0){
+      if (repFindinfo.length > 0) {
         for (var idx in repFindinfo) {
           var subject = repFindinfo[idx];
           var title = subject.FindContent;
@@ -180,15 +231,50 @@ var that=this;
         }
         that.setData({
           findhotinfo: that.data.findhotinfo.concat(repFindinfo),//热门发现
-          page:that.data.page+1,
+          page: that.data.page + 1,
         })
       }
-      else{
+      else {
 
       }
     });
   },
-  dianzan:function(e){
+  dianzan: function (e) {
     console.log('点赞');
+  },
+  getgoodsinfo: function (pageindex) {
+    var url = "/common/goods/getgoodslist.html?appid=99999999&sign=&tagid=7&pageindex=" + pageindex;
+    var that = this;
+    app.sendRequest(url, (data) => {
+      var repGoodsinfo = data.Data;
+      if (repGoodsinfo.length > 0) {
+        for (var idx in repGoodsinfo) {
+          var subject = repGoodsinfo[idx];
+          var goodsname = subject.GoodsName;
+          if (goodsname.length >= 10) {
+            subject.GoodsName = goodsname.substring(0, 10) + "...";
+          }
+          var goodstitle = subject.GoodsTitle;
+          if (goodstitle.length >= 12) {
+            subject.GoodsTitle = goodstitle.substring(0, 12) + "...";
+          }
+          if (subject.Characteristic == "") {
+            subject.Characteristic = "精选";
+          }
+        }
+        that.setData({
+          goodsinfo: that.data.goodsinfo.concat(repGoodsinfo),//热门发现
+          pageindex: that.data.pageindex + 1,
+        })
+      }
+      else {
+
+      }
+    });
+  },
+  gotogoodsdetail: function (e) {
+    wx.navigateTo({
+      url: '/pages/goods/detail/detail?goodsid=' + e.currentTarget.dataset.postid
+    })
   }
 })
