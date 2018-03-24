@@ -4,7 +4,13 @@
 <import src="../template/find_template.wxml" />
 <import src="../template/goods_template_2.wxml" />
 <view class="top-tab">
-  <view class="">
+<view></view>
+  <view >
+    <view class="top-tab-item {{currentTopItem==idx ? 'active' : ''}}" wx:for="{{topTabItems}}" wx:for-index="idx" data-idx="{{idx}}" bindtap="switchTab">
+      <text style="margin: 3px 7px;"> {{item}}</text>
+    </view>
+  </view>
+    <view class="category-view">
     <navigator url='/pages/category/category'>
       <view class="wx-view_u7aIQl">
         <view class="wx-view_3ggkNG">
@@ -13,24 +19,19 @@
       </view>
     </navigator>
   </view>
-  <view style='margin-left: 18%;'>
-    <view class="top-tab-item {{currentTopItem==idx ? 'active' : ''}}" wx:for="{{topTabItems}}" wx:for-index="idx" data-idx="{{idx}}" bindtap="switchTab">
-      <text style="margin: 3px 7px;"> {{item}}</text>
-    </view>
-  </view>
 </view>
 
-<swiper class="swiper" current="{{currentTopItem}}" bindchange="bindChange" duration="300" style="height:{{viewheiht}}px">
+  <swiper class="swiper" current="{{currentTopItem}}" bindchange="bindChange" duration="300" style="height:{{viewheiht}}px">
   <swiper-item>
     <scroll-view scroll-y="true" bindscrolltolower="loadMoreFind" class='scrollView'>
       <block wx:for="{{findhotinfo}}" wx:for-item="item">
-        <view style='margin:8px'>
+       
           <template is="findTemplate" data="{{...item}}" />
-        </view>
+       
       </block>
     </scroll-view>
   </swiper-item>
-  <swiper-item>
+   <swiper-item>
     <scroll-view scroll-y="true" bindscrolltolower="loadMoreGoods" class='scrollView '>
       <view class='goodscontainer'>
         <block wx:for="{{goodsinfo}}">
@@ -38,5 +39,5 @@
         </block>
       </view>
     </scroll-view>
-  </swiper-item>
-</swiper>
+  </swiper-item> 
+</swiper>  

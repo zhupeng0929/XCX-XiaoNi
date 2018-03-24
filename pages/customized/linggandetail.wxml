@@ -1,24 +1,50 @@
+<view class="tabTit box tc bg_f">
+  <view class="flex1 title{{!tab[index]?' active':''}}" wx:for="{{tabTxt}}" wx:key="" data-index="{{index}}" bindtap="filterTab">
+    <text>{{item}}</text>
+    <image src="/images/updown.png"></image>
+  </view>
+</view>
+<!--筛选项-->
+<view class="tabLayer tc"  hidden="{{tab[0]}}">
+
+  <text class="tabLayertext {{categoryid==item.CategoryID?'active':''}}" wx:for="{{FindCategoryList}}" wx:key="" data-id="{{item.CategoryID}}" data-index="0" data-txt="{{item.CategoryName}}" bindtap="filter">{{item.CategoryName}}</text>
+</view>
+<view class="tabLayer tc" hidden="{{tab[1]}}">
+  <block wx:for="{{BrandList}}" wx:key="">
+    <image wx:if='{{item.LogoImgPath!=""}}' class="tabLayerimage {{brandid==item.BrandID?'active':''}}" data-id="{{item.BrandID}}" data-index="1" data-txt="{{item.BrandName}}" bindtap="filter" src='{{item.LogoImgPath}}'> {{item.LogoImgPath==""?item.BrandName:""}}</image>
+    <text wx:else class="tabLayerimage" data-id="{{item.BrandID}}" data-index="1" data-txt="{{item.BrandName}}" bindtap="filter"> {{item.BrandName}}</text>
+  </block>
+</view>
+<view class="tabLayer tc" hidden="{{tab[2]}}">
+  <text class="tabLayertext {{industryid==item.IndustryID?'active':''}}" wx:for="{{IndustryList}}" wx:key="" data-id="{{item.IndustryID}}" data-index="2" data-txt="{{item.IndustryName}}" bindtap="filter">{{item.IndustryName}}</text>
+</view>
+
+
+
+<view  bindtap="bindcover" class="b1" hidden="{{flag}}">  </view>
+
 
 
 <view class="content">
-      <view class="left">
-        <block wx:for="{{finddetail}}" wx:key="">
-          <template is="item" data="{{...item}}" wx:if="{{index%2==0}}"></template>
-        </block>
-      </view>
-      <view class="right">
-        <block wx:for="{{finddetail}}" wx:key="">
-          <template is="item" data="{{...item}}" wx:if="{{index%2==1}}"></template>
-        </block>
-      </view>
-    </view>
-<!--  下面是一个模块 -->
-<template name="item">
-  <view class="item">
-    <image class="item-img" src="{{HomeFilePath}}" mode="widthFix"></image>
-    <view class="item-title-box">
-     <text class="item-title"> {{FindSubTitle}}</text>
-    </view>
+  <view class="left">
+    <block wx:for="{{finddetail}}" wx:key="">
+      <template is="item" data="{{...item}}" wx:if="{{index%2==0}}"></template>
+    </block>
   </view>
-
+  <view class="right">
+    <block wx:for="{{finddetail}}" wx:key="">
+      <template is="item" data="{{...item}}" wx:if="{{index%2==1}}"></template>
+    </block>
+  </view>
+</view>
+<!-- 下面是一个模块  -->
+<template name="item">
+  <navigator url='/pages/find/find?findid={{FindID}}'>
+    <view class="item">
+      <image class="item-img" src="{{HomeFilePath}}" mode="widthFix"></image>
+      <view class="item-title-box">
+        <text class="item-title"> {{FindSubTitle}}</text>
+      </view>
+    </view>
+  </navigator>
 </template>

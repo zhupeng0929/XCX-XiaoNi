@@ -222,10 +222,7 @@ Page({
       if (repFindinfo.length > 0) {
         for (var idx in repFindinfo) {
           var subject = repFindinfo[idx];
-          var title = subject.FindContent;
-          if (title.length >= 15) {
-            subject.FindContentSub = title.substring(0, 15) + "...";
-          }
+
           subject.CreateTime = app.getTimeText(subject.CreateTime);
           subject.imgCount = subject.FindImgs.length;
         }

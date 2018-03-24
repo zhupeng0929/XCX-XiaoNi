@@ -1,22 +1,22 @@
 <template name="goodsTemplate">
-<view catchtap="gotogoodsdetail" data-postId="{{GoodsID}}" class="goodscontainer">
-  <view>
-    <image class='goodsimg' src='{{PictureImg}}'></image>
+  <view catchtap="gotogoodsdetail" data-postId="{{GoodsID}}" class="goodscontainer">
+    <view>
+      <image class='goodsimg' src='{{PictureImg}}'></image>
+    </view>
+    <view class='goodsinfo'>
+      <view>
+        <text class='goodsname text'>{{GoodsName}}</text>
+      </view>
+      <view>
+        <text class='text' style='color:#999'>{{GoodsTitle}}</text>
+      </view>
+      <view>
+        <text class='text' style='color:#999;'>起订量：{{MinOrderQuantity}}</text>
+      </view>
+      <view style='display:flex;flex-direction: row;justify-content:space-between;margin-top:20rpx;'>
+        <text class='text' style='color:#ff4200;'>¥{{GoodsPrice}}</text>
+        <text class='text' style='color:#999;'>工期：{{CustomHours}}天</text>
+      </view>
+    </view>
   </view>
-  <view class='goodsinfo'>
-    <view>
-      <text class='goodsname'>{{GoodsName}}</text>
-    </view>
-    <view>
-      <text style='color:#999'>{{GoodsTitle}}</text>
-    </view>
-    <view>
-      <text style='color:#999;'>起订量：{{MinOrderQuantity}}</text>
-    </view>
-    <view style='display:flex;flex-direction: row;justify-content:space-between;margin-top:20rpx;'>
-      <text style='color:#ff4200;'>¥{{GoodsPrice}}</text>
-      <text style='color:#999;'>工期：{{CustomHours}}天</text>
-    </view>
-  </view>
-</view>
 </template>

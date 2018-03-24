@@ -110,7 +110,7 @@ Page({
       findhotinfo:[],
       shopid:'',
     });
-    this.getgoodsinfo(this.data.pageindex);
+    this.getshopsinfo();
     wx.stopPullDownRefresh();
   },
 

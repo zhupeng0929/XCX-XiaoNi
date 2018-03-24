@@ -41,6 +41,8 @@
 .img_l_1 {
   width: 77%;
   height: 300rpx;
+  border-radius:5px;
+
 }
 
 .img_l_2 {
@@ -52,6 +54,8 @@
   width: 146rpx;
   height: 146rpx;
   margin-left: 10rpx;
+  border-radius:5px;
+
 }
 
 .content {
@@ -64,6 +68,7 @@
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  width: 95%;
 }
 
 .image_icon {

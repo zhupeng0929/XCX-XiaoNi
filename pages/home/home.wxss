@@ -1,4 +1,5 @@
 @import "../template/find_template.wxss";
+@import "../template/goods_template_2.wxss";
 
 .top-tab {
   font-size: 13px;
@@ -13,7 +14,7 @@
   top: 0;
   border-radius: 0px;
   display: flex;
-
+  justify-content: space-between;
 }
 
 .top-tab .top-tab-item {
@@ -24,7 +25,7 @@
   text-align: center;
   border-radius: 0px;
   margin: 0 20px;
-  font-size:15px;
+  font-size: 15px;
   font-weight: 600;
 }
 
@@ -34,6 +35,10 @@
   /* background-color:#ff4200;
   border-radius: 20px;
   color: white; */
+}
+
+.category-view {
+  margin-right: 15px;
 }
 
 .swiper {
@@ -98,7 +103,6 @@
 .title-text {
   font-size: 30rpx;
 }
-@import "../template/goods_template_2.wxss";
 
 view {
   background-color: #fff;
@@ -144,4 +148,3 @@ view {
   flex-wrap: wrap;
   background-color: #f2f2f2;
 }
-

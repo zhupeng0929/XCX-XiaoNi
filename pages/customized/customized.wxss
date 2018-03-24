@@ -12,7 +12,7 @@ button::after {
 
 .userinfo {
   padding: 15px;
-  border-top: 1px solid rgb(209, 209, 209);
+  border-top: 1px solid #f5f5f5;
 }
 
 .textname {
@@ -73,7 +73,7 @@ button::after {
 }
 
 .line {
-  border-left: 1px solid #f2f2f2;
+  border-left: 1px solid #f5f5f5;
 }
 
 .view-linggan {

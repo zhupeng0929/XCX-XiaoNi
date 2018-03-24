@@ -4,6 +4,7 @@
   border-radius: 14rpx;
   padding-bottom: 10px;
   margin-bottom: 10px;
+    background-color: white;
 }
 
 .goodsname {
@@ -30,7 +31,7 @@
   margin: 0 10rpx;
 }
 
-image {
+.image {
   vertical-align: middle;
   margin-right: 20rpx;
 }

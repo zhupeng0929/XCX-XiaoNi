@@ -1,4 +1,7 @@
 @import "/components/wxParse/wxParse.wxss";
+@import '/components/wux.wxss';
+
+
 .top-tab {
   width: 750rpx;
   font-size: 15px;
@@ -21,7 +24,7 @@
 
 .top-tab-item.active {
   border-bottom: 2px solid red;
-  color: red;
+  color: #ff4200;
 }
 
 .swiper {
@@ -77,7 +80,7 @@
 .wx-view_IfJZkK2 {
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid rgb(209, 209, 209);
+  border-bottom: 1px solid #f5f5f5;
   width: 100%;
   position: fixed;
   bottom: 0;
@@ -113,9 +116,106 @@
   margin-top: 3px;
   border-radius: 3px;
 }
-view{
+
+view {
   background-color: white;
 }
-.wxParse wxParse-div img{
+
+.wxParse wxParse-div img {
   width: 100%;
+}
+
+.commodity_screen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.2;
+  overflow: hidden;
+  z-index: 1000;
+  color: #fff;
+}
+
+.commodity_attr_box {
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2000;
+  background: #fff;
+}
+
+.c_info_view {
+  display: flex;
+  align-items: center;
+  margin: 20rpx;
+}
+
+.fengexian {
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.c_view_img {
+  height: 80px;
+}
+
+.c_img {
+  width: 80px;
+  height: 80px;
+}
+
+.c_goodsinfo {
+  display: flex;
+  flex-direction: column;
+  margin-left: 5px;
+}
+
+.c_goodsinfo_text {
+  font-size: 14px;
+  color: #999;
+}
+
+.c_sku_price_view {
+  padding: 20px;
+}
+
+.c_sku_price {
+  border: 1px solid #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30%;
+}
+
+.c_sku_price_text {
+  font-size: 15px;
+}
+
+.c_sku_count_text {
+  font-size: 13px;
+  background-color: #f2f2f2;
+  width: 100%;
+  text-align: center;
+}
+
+.sku_text {
+  margin: 2px 5px;
+
+  font-size: 13px;
+  padding: 5px 10px;
+  border-radius: 3px;
+}
+.sku_default{
+    background-color: #f2f2f2;
+}
+.sku_active{
+  background-color: #ff4200;
+  color: white;
+}
+
+.custom-xnumber .wux-number-input {
+	width: 100px;
 }

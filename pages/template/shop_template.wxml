@@ -26,25 +26,24 @@
   </view>
 </template>
 
- <template name="shopTemplate2"> 
-<view class="shopcontainer">
-  <view style='margin-left:20rpx'>
-     <image wx:if="{{ImgFilePath}}" class='shopimg' src='{{ImgFilePath}}'></image>
-      <image wx:else class='shopimg' src='/images/mrfwd.png'></image> 
-
-
+<template name="shopTemplate2">
+<navigator url='/pages/shop/shopdetail?userid={{UserID}}'>
+  <view class="shopcontainer">
+    <view style='margin-left:20rpx'>
+      <image wx:if="{{ImgFilePath}}" class='shopimg' src='{{ImgFilePath}}'></image>
+      <image wx:else class='shopimg' src='/images/mrfwd.png'></image>
+    </view>
+    <view class='shopinfo'>
+      <view style='display:flex;flex-direction: row;justify-content:space-between;'>
+        <text class='shopname'>{{CompanyName}}</text>
+      </view>
+      <view>
+        <text class='text' style='color:#999'>{{Address}}</text>
+      </view>
+      <view style='margin-bottom:10rpx'>
+        <text class='text' style='color:#ff4200;'>{{CellPhone}}</text>
+      </view>
+    </view>
   </view>
-  <view class='shopinfo'>
-    <view style='display:flex;flex-direction: row;justify-content:space-between;'>
-      <text class='shopname'>{{CompanyName}}</text>
-    </view>
-     <view>
-      <text  class='text' style='color:#999'>{{Address}}</text>
-    </view>
-    <view style='margin-bottom:10rpx'>
-      <text class='text' style='color:#ff4200;'>{{CellPhone}}</text>
-    </view>
-   
-  </view>
-</view>
- </template> 
+  </navigator>
+</template>

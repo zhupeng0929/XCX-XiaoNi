@@ -1,0 +1,47 @@
+<import src="../template/find_template.wxml" />
+<import src="../template/goods_template_2.wxml" />
+
+
+<swiper class='swiper' indicator-dots indicator-color autoplay>
+  <block wx:for="{{userinfo.SharePictureList}}">
+    <swiper-item>
+      <image mode="aspectFill" src="{{item.PicUrl}}" class="slide-image" />
+    </swiper-item>
+  </block>
+</swiper>
+
+<view class='view'>
+  <view class='view_shopname'>
+    <text class='shopname'>{{userinfo.CompanyName}}</text>
+    <image class='callphone' src='/images/tel_shop.png'></image>
+  </view>
+  <view>
+    <image class='star' src='/images/star.png'></image>
+    <image class='star' src='/images/star.png'></image>
+    <image class='star' src='/images/star.png'></image>
+    <image class='star' src='/images/star.png'></image>
+    <image class='star' src='/images/star.png'></image>
+  </view>
+  <view style="display: flex;padding: 10px 0px;">
+    <image class='star' src='/images/address_s.png'></image>
+    <text class='ellipsis' style="margin-left: 10px;">{{userinfo.ProvinceName}}{{userinfo.CityName}}{{userinfo.CountryName}}{{userinfo.Address}}</text>
+  </view>
+</view>
+
+<view class='view' style="margin-top: 5px;padding: 10px 10px;display: flex;">
+  <view style="border-left: 10px solid #FF7D00;height: 20px;margin-right:10px;"></view>
+  <text style="font-weight: 500;">门店推荐</text>
+</view>
+<view class='goodscontainer'>
+  <block wx:for="{{goodsinfo}}">
+    <template is="goodsTemplate2" data="{{...item}}" />
+  </block>
+</view>
+
+<view class='view' style="margin-top: 5px;padding: 10px 10px;display: flex;">
+  <view style="border-left: 10px solid #FF7D00;height: 20px;margin-right:10px;"></view>
+  <text style="font-weight: 500;">门店案例</text>
+</view>
+<block wx:for="{{findhotinfo}}" wx:for-item="item">
+  <template is="findTemplate2" data="{{...item}}" />
+</block>

@@ -1,19 +1,18 @@
 {
   "pages": [
-                      "pages/customized/customized",
-        "pages/shop/shop",
-"pages/template/shop_template",
-
-    "pages/customized/linggandetail",
-
     "pages/home/home",
+    "pages/shop/shopdetail",
+    "pages/customized/customized",
+
+    "pages/shop/shop",
+    "pages/template/shop_template",
+    "pages/customized/linggandetail",
     "pages/index/index",
     "pages/mine/mine",
     "pages/goods/detail/detail",
     "pages/goods/goods",
     "pages/logs/logs",
     "pages/find/find",
-
     "pages/category/goodslist/goodslist",
     "pages/category/category",
     "pages/template/find_template",

@@ -54,7 +54,7 @@
   <text class='text-linggan'>灵感库</text>
   <view class='findcategory_con'>
     <block wx:for="{{findcategory}}">
-      <navigator class='findcategory' url='/pages/customized/linggandetail?categoryid={{item.CategoryID}}'>
+      <navigator class='findcategory' url='/pages/customized/linggandetail?categoryid={{item.CategoryID}}&CategoryName={{item.CategoryName}}'>
         <!-- <view class='findcategory'> -->
         <image class='cate_img' src='{{item.IconFilePath}}'></image>
         <text class='cate_text'>{{item.CategoryName}}</text>

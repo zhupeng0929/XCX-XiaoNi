@@ -5,41 +5,30 @@
     <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
     <block wx:else>
       <image bindtap="bindViewTap" class="userinfo-avatar" src="{{xn_userInfo.ImgFilePath}}" background-size="cover"></image>
-      <text class="userinfo-nickname">{{xn_userInfo.NickName}}</text>
+
     </block>
   </view>
-  <view class='grade'>
-    <image src='/images/v1.png' class='grade_img' model='aspectFill'></image>
-    <text class='grade_text'>注册会员</text>
-  </view>
-  <view class='user-action'>
-    <view class='user-action-view'>
-      <text class='user-action-text'>{{xn_userInfo.FollowGoodsCount }}</text>
-      <text class='user-action-text'>关注</text>
-    </view>
-    <view class='user-action-line '></view>
-    <view class='user-action-view'>
-      <text class='user-action-text'>{{xn_userInfo.Points  }}</text>
-      <text class='user-action-text'>积分</text>
-    </view>
-    <view class='user-action-line '></view>
-    <view class='user-action-view'>
-      <text class='user-action-text'>{{xn_userInfo.FindCount }}</text>
-      <text class='user-action-text'>案例</text>
+  <view style="margin-left: 10px;">
+    <text class="userinfo-nickname">{{xn_userInfo.NickName}}</text>
+    <view class='grade'>
+      <image src='/images/v1.png' class='grade_img' model='aspectFill'></image>
+      <text class='grade_text'>注册会员</text>
+      <text class='grade_text'>></text>
     </view>
   </view>
+
+
 </view>
 <view class='myorder'>
-  <view class='myorder-view'>
-    <text class='myorder-text-1'>我的订单</text>
+
+  <view class='order-tool'>
     <navigator url='../orderlist/orderlist?tabid=0'>
-      <view>
-        <text class='myorder-text-2'>查看全部订单</text>
-        <image class='myorder-img' src='/images/linkjt3x.png'></image>
+      <view class='order-tool-1'>
+        <image class='order-tool-img' src='/images/ml_order_sh3x.png'></image>
+        <text class='order-tool-text'>全部订单</text>
       </view>
     </navigator>
-  </view>
-  <view class='order-tool'>
+    <view class='order-line'></view>
     <navigator url='../orderlist/orderlist?tabid=1'>
       <view class='order-tool-1'>
         <image class='order-tool-img' src='/images/ml_order_dfk3x.png'></image>
@@ -60,13 +49,41 @@
         <text class='order-tool-text'>已完成</text>
       </view>
     </navigator>
-    <view class='order-line'></view>
-    <view class='order-tool-1'>
-      <image class='order-tool-img' src='/images/ml_order_sh3x.png'></image>
-      <text class='order-tool-text'>客户</text>
+
+  </view>
+</view>
+
+<view class='myorder'>
+  <view class='user-action'>
+    <view class='user-action-view'>
+
+      <view>
+        <image class='user-action-img' src='/images/mine_guanzhu.png'></image>
+
+        <text class='user-action-text'>关注</text>
+      </view>
+      <text class='user-action-text'>{{xn_userInfo.FollowGoodsCount }}</text>
+
+    </view>
+    <view class='user-action-line '></view>
+    <view class='user-action-view'>
+      <view>
+        <image class='user-action-img' src='/images/mine_jifen.png'></image>
+        <text class='user-action-text'>积分</text>
+      </view>
+      <text class='user-action-text'>{{xn_userInfo.Points  }}</text>
+    </view>
+    <view class='user-action-line '></view>
+    <view class='user-action-view'>
+      <view>
+        <image class='user-action-img' src='/images/mine_fangan.png'></image>
+        <text class='user-action-text'>案例</text>
+      </view>
+      <text class='user-action-text'>{{xn_userInfo.FindCount }}</text>
     </view>
   </view>
 </view>
+
 
 <view class='myorder'>
   <view class='myorder-view'>
@@ -74,25 +91,25 @@
 
   </view>
   <view class='order-tool' style='padding:10px 20px;'>
-  <navigator url='../poingift/pointgift'>
-    <view class='order-tool-1'>
-      <image class='order-tool-img' src='/images/jifen3x.png'></image>
-      <text class='order-tool-text'>积分兑换</text>
-    </view>
+    <navigator url='../poingift/pointgift'>
+      <view class='order-tool-1'>
+        <image class='order-tool-img' src='/images/jifen3x.png'></image>
+        <text class='order-tool-text'>积分兑换</text>
+      </view>
     </navigator>
     <view class='order-line'></view>
     <navigator url='../coupon/coupon?tabid=0'>
-    <view class='order-tool-1'>
-      <image class='order-tool-img' src='/images/mine_h_yhq3x.png'></image>
-      <text class='order-tool-text'>我的优惠券</text>
-    </view>
+      <view class='order-tool-1'>
+        <image class='order-tool-img' src='/images/mine_h_yhq3x.png'></image>
+        <text class='order-tool-text'>我的优惠券</text>
+      </view>
     </navigator>
     <view class='order-line'></view>
     <navigator url='../takegift/takegift'>
-    <view class='order-tool-1'>
-      <image class='order-tool-img' src='/images/mine_h_lp3x.png'></image>
-      <text class='order-tool-text'>礼品领取</text>
-    </view>
-</navigator>
+      <view class='order-tool-1'>
+        <image class='order-tool-img' src='/images/mine_h_lp3x.png'></image>
+        <text class='order-tool-text'>礼品领取</text>
+      </view>
+    </navigator>
   </view>
 </view>
